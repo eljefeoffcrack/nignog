@@ -15,7 +15,7 @@
         </div>
         <div class="content my-4 text-gray-300">
             <p class="text-lg font-normal">Hello, I'm Eljefe, a Social Engineer, Security Researcher, and Developer passionate about exploring the intersection of technology and cybersecurity. I’m always expanding my knowledge and skills.</p>
-            <p class="text-gray-500">The time in Europe is <span id="russia-time" class="font-semibold">--:--</span>.</p>
+            <p class="text-gray-500">The time in Europe is <span id="germany-time" class="font-semibold">--:--</span>.</p>
         </div>
         <div class="icons my-4">
             <a href="https://github.com/larpiewarpie" class="text-gray-400 text-2xl mx-2 hover:text-white transition-transform transform hover:scale-110"><i class="fab fa-github"></i></a>
@@ -60,6 +60,14 @@
                 <div class="flex items-center">
                     <i class="fas fa-database text-2xl mr-2 text-red-600"></i>
                     <span class="text-white">SQL (Database Management)</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fab fa-git-alt text-2xl mr-2 text-red-600"></i>
+                    <span class="text-white">Git-plain (Version Control)</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fab fa-wordpress text-2xl mr-2 text-red-600"></i>
+                    <span class="text-white">WordPress (Web Development)</span>
                 </div>
             </div>
     </div>
@@ -122,8 +130,69 @@
                             </div>
                         `;
                         spotifyStatusElement.innerHTML = songInfo;
+                    } else if (presence.activities) {
+                        const activitiesList = presence.activities.map(activity => {
+                            let activityText = '';
+                            if (activity.name === "Visual Studio Code") { // Check for Visual Studio Code activity
+                                const { details, state } = activity;
+                                const fileName = details || "Editing file"; // Fallback if no details
+                                const language = state || "Unknown Language"; // Fallback if no state
+
+                                // Determine the file extension and corresponding icon
+                                const fileExtension = fileName.split('.').pop().toLowerCase();
+                                let fileIcon = '';
+
+                                switch (fileExtension) {
+                                    case 'py':
+                                        fileIcon = '<i class="fab fa-python text-2xl mr-2"></i>';
+                                        break;
+                                    case 'js':
+                                        fileIcon = '<i class="fab fa-js text-2xl mr-2"></i>';
+                                        break;
+                                    case 'html':
+                                        fileIcon = '<i class="fab fa-html5 text-2xl mr-2"></i>';
+                                        break;
+                                    case 'tsx':
+                                        fileIcon = '<i class="fab fa-react text-2xl mr-2"></i>';
+                                        break;
+                                    case 'css':
+                                        fileIcon = '<i class="fab fa-css3 text-2xl mr-2"></i>';
+                                        break;
+                                    case 'go':
+                                        fileIcon = '<i class="fab fa-golang text-2xl mr-2"></i>';
+                                        break;
+                                    case 'java':
+                                        fileIcon = '<i class="fab fa-java text-2xl mr-2"></i>';
+                                        break;
+                                    case 'txt':
+                                        fileIcon = '<i class="fas fa-file-alt text-2xl mr-2"></i>'; // Text file icon
+                                        break;
+                                    case 'sql':
+                                        fileIcon = '<i class="fas fa-database text-2xl mr-2"></i>'; // Text file icon
+                                        break;
+                                    case 'jsx':
+                                        fileIcon = '<i class="fab fa-react text-2xl mr-2"></i>'; // Text file icon
+                                        break;
+                                    // Add more cases for other file types as needed
+                                    default:
+                                        fileIcon = '<i class="fas fa-file text-2xl mr-2"></i>'; // Default file icon
+                                }
+
+                                activityText = `
+                                    <div class="flex items-center p-2">
+                                        ${fileIcon}
+                                        <div>
+                                            <p class="text-white">Editing <strong>${fileName}</strong></p>
+                                            <p class="text-gray-400">Workspace: <em>${activity.party?.id || "No workspace"}</em></p>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            return `<div>${activityText}</div>`;
+                        }).join('');
+                        spotifyStatusElement.innerHTML = activitiesList || '<p class="text-gray-400">No current activities...</p>';
                     } else {
-                        spotifyStatusElement.innerHTML = '<img src="https://files.catbox.moe/m7vc0e.gif" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
+                        spotifyStatusElement.innerHTML = '<p class="text-gray-400">Currently not listening...</p>';
                     }
                 } else {
                     subtextElement.textContent = "Unable to fetch status";
@@ -136,17 +205,17 @@
             }
         }
 
-        function updateRussiaTime() {
+        function updateGermanyTime() {
             const now = new Date();
-            const options = { timeZone: "Europe/Moscow", hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-            const russiaTime = now.toLocaleTimeString('en-GB', options);
-            russiaTimeElement.textContent = russiaTime;
+            const options = { timeZone: "Europe/Berlin", hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            const germanyTime = now.toLocaleTimeString('en-GB', options);
+            document.getElementById("germany-time").textContent = germanyTime;
         }
 
         fetchPresence();
         setInterval(fetchPresence, 1000);
-        updateRussiaTime();
-        setInterval(updateRussiaTime, 1000);
+        updateGermanyTime();
+        setInterval(updateGermanyTime, 1000);
     </script>
 
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
