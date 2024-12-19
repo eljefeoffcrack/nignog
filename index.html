@@ -1,13 +1,22 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="eljefe">
+    <meta property="og:image" content="https://files.catbox.moe/trhi7b.png">
+    <meta property="og:site_name" content="eljefe.lol">
+    <meta property="og:description" content="Telegram:@convict">
     <title>eljefe</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-black text-white flex justify-center items-center h-screen">
+<body style="background-color: #050505; background-image: linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px); background-size: 50px 50px; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; position: relative; overflow: hidden;">
+    <div style="background: conic-gradient(from 180deg at 50% 50%, #ffffff 0%, #006bb3 12%, #3383cc 25%, #66a3e0 37%, #99c3f5 50%, #c6d9ff 62%, #e2f0ff 75%, #b3d7ff 87%, #80b3ff 100%); border-radius: 50%; font-size: 250px; height: 1em; width: 1em; filter: blur(114px); position: absolute; right: 50px; top: 125px; opacity: 0.2; z-index: -1;"></div>
+    <div style="background: conic-gradient(from 180deg at 50% 50%, #ffffff 0%, #006bb3 12%, #3383cc 25%, #66a3e0 37%, #99c3f5 50%, #c6d9ff 62%, #e2f0ff 75%, #b3d7ff 87%, #80b3ff 100%); border-radius: 50%; font-size: 250px; height: 1em; width: 1em; filter: blur(114px); position: absolute; left: 50px; bottom: 125px; opacity: 0.2; z-index: -1;"></div>
     <div class="container mx-auto max-w-lg p-4">
         <div class="header">
             <h1 class="text-4xl font-bold">eljefe <span class="text-green-500 dot" id="status-dot">•</span></h1>
@@ -35,7 +44,7 @@
                 </div>
                 <div class="flex items-center">
                     <i class="fab fa-python text-2xl mr-2 text-yellow-500"></i>
-                    <span class="text-white">Python (Scripting, Data Science)</span>
+                    <span class="text-white">Python (Web Development)</span>
                 </div>
                 <div class="flex items-center">
                     <i class="fab fa-js text-2xl mr-2 text-yellow-400"></i>
@@ -70,7 +79,7 @@
                     <span class="text-white">WordPress (Web Development)</span>
                 </div>
             </div>
-    </div>
+        </div> 
     </div>
     <script>
         const userId = "1311818921824751680";
@@ -133,12 +142,12 @@
                     } else if (presence.activities) {
                         const activitiesList = presence.activities.map(activity => {
                             let activityText = '';
-                            if (activity.name === "Visual Studio Code") { // Check for Visual Studio Code activity
+                            if (activity.name === "Visual Studio Code") { 
                                 const { details, state } = activity;
-                                const fileName = details || "Editing file"; // Fallback if no details
-                                const language = state || "Unknown Language"; // Fallback if no state
+                                const fileName = details || "Editing file"; 
+                                const language = state || "Unknown Language"; 
 
-                                // Determine the file extension and corresponding icon
+                                
                                 const fileExtension = fileName.split('.').pop().toLowerCase();
                                 let fileIcon = '';
 
@@ -165,17 +174,16 @@
                                         fileIcon = '<i class="fab fa-java text-2xl mr-2"></i>';
                                         break;
                                     case 'txt':
-                                        fileIcon = '<i class="fas fa-file-alt text-2xl mr-2"></i>'; // Text file icon
+                                        fileIcon = '<i class="fas fa-file-alt text-2xl mr-2"></i>'; 
                                         break;
                                     case 'sql':
-                                        fileIcon = '<i class="fas fa-database text-2xl mr-2"></i>'; // Text file icon
+                                        fileIcon = '<i class="fas fa-database text-2xl mr-2"></i>'; 
                                         break;
                                     case 'jsx':
-                                        fileIcon = '<i class="fab fa-react text-2xl mr-2"></i>'; // Text file icon
+                                        fileIcon = '<i class="fab fa-react text-2xl mr-2"></i>';
                                         break;
-                                    // Add more cases for other file types as needed
                                     default:
-                                        fileIcon = '<i class="fas fa-file text-2xl mr-2"></i>'; // Default file icon
+                                        fileIcon = '<i class="fas fa-file text-2xl mr-2"></i>'; 
                                 }
 
                                 activityText = `
@@ -184,6 +192,15 @@
                                         <div>
                                             <p class="text-white">Editing <strong>${fileName}</strong></p>
                                             <p class="text-gray-400">Workspace: <em>${activity.party?.id || "No workspace"}</em></p>
+                                        </div>
+                                    </div>
+                                `;
+                            } else if (activity.name === "Roblox") {
+                                activityText = `
+                                    <div class="flex items-center">
+                                        <i class="fab fa-roblox text-2xl mr-2"></i>
+                                        <div>
+                                            <p>Playing <strong>Roblox</strong></p>
                                         </div>
                                     </div>
                                 `;
@@ -196,11 +213,11 @@
                     }
                 } else {
                     subtextElement.textContent = "Unable to fetch status";
-                    spotifyStatusElement.innerHTML = '<img src="" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
+                    spotifyStatusElement.innerHTML = '<img src="https://files.catbox.moe/m7vc0e.gif" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
                 }
             } catch (error) {
                 subtextElement.textContent = "Error fetching status";
-                spotifyStatusElement.innerHTML = '<img src="" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
+                spotifyStatusElement.innerHTML = '<img src="https://files.catbox.moe/m7vc0e.gif" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
                 console.error("Error fetching presence data:", error);
             }
         }
