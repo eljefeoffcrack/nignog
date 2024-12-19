@@ -196,11 +196,11 @@
                     }
                 } else {
                     subtextElement.textContent = "Unable to fetch status";
-                    spotifyStatusElement.innerHTML = '<img src="https://files.catbox.moe/m7vc0e.gif" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
+                    spotifyStatusElement.innerHTML = '<img src="" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
                 }
             } catch (error) {
                 subtextElement.textContent = "Error fetching status";
-                spotifyStatusElement.innerHTML = '<img src="https://files.catbox.moe/m7vc0e.gif" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
+                spotifyStatusElement.innerHTML = '<img src="" class="absolute top-[-55px] right-5 w-20" alt="Overlay GIF"><i class="fab fa-spotify text-green-500 text-2xl mr-2"></i> <p class="text-gray-400">currently not listening...</p>';
                 console.error("Error fetching presence data:", error);
             }
         }
