@@ -2,6 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="eljefe">
+    <meta property="og:image" content="https://files.catbox.moe/trhi7b.png">
+    <meta property="og:site_name" content="eljefe.lol">
     <title>eljefe</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -24,13 +29,59 @@
 
         <div class="content my-4 text-gray-300">
             <h2 class="text-2xl font-bold">Projects</h2>
-            <div class="projects flex flex-col gap-4 mt-4">
-                <div class="project-card flex border border-gray-600 p-4 rounded-lg shadow-md">
-                    <img src="https://cdn.discordapp.com/attachments/1311829229771686021/1319655747029831750/photo_2024-12-20_14-19-08.gif?ex=6766c0b0&is=67656f30&hm=7cf47989a4f5e7eea178aa205776b5df027955a077763e276f2a2361b2a142cf&" alt="User  Profile" class="profile-pic w-12 h-12 rounded-full mr-4">
-                    <div class="project-info flex-1">
-                        <h3 class="text-xl font-semibold">Paranoia API</h3>
-                        <p class="text-gray-400">Osint API.</p>
+            <div class="flex w-full flex-col items-start gap-4 mt-4">
+                <div class="flex w-full flex-col overflow-hidden rounded-lg border border-white border-opacity-20 transition duration-300 hover:bg-white hover:bg-opacity-5">
+                    <div class="flex w-full flex-row items-start gap-4 p-4">
+                        <img src="https://files.catbox.moe/tsfq2w.gif" class="h-16 w-16 rounded" alt="Paranoia API"/>
+                        <div class="flex flex-col">
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-medium text-white xl:text-lg">Paranoia API</h3>
+                                <div class="h-2 w-2 rounded-full bg-green-600"></div>
+                            </div>
+                            <p class="text-xs font-light text-white text-opacity-80 xl:text-sm">Cool Osint api.</p>
+                        </div>
                     </div>
+                    <div class="flex w-full items-center gap-2 px-4 pb-4 mt-2">
+                        <div style="border-color:gray;filter:contrast(0.3)" class="flex items-center gap-2 whitespace-nowrap rounded bg-white bg-opacity-10 px-3 py-1">
+                            <div class="h-1.5 w-1.5 rounded-full" style="background-color:rgb(0, 155, 28)"></div>
+                            <p class="text-xs font-light text-white xl:text-sm">100+ Buyers</p>
+                        </div>
+                        <div style="border-color:yellow;filter:contrast(0.3)" class="flex items-center gap-2 whitespace-nowrap rounded bg-white bg-opacity-10 px-3 py-1">
+                            <div class="h-1.5 w-1.5 rounded-full" style="background-color:yellow"></div>
+                            <p class="text-xs font-light text-white xl:text-sm">API</p>
+                        </div>
+                        <div style="border-color:blue;filter:contrast(0.3)" class="flex items-center gap-2 whitespace-nowrap rounded bg-white bg-opacity-10 px-3 py-1">
+                            <div class="h-1.5 w-1.5 rounded-full" style="background-color:blue"></div>
+                            <p class="text-xs font-light text-white xl:text-sm">Python</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex w-full flex-col overflow-hidden rounded-lg border border-white border-opacity-20 transition duration-300 hover:bg-white hover:bg-opacity-5">
+                    <div class="flex w-full flex-row items-start gap-4 p-4">
+                        <img src="https://files.catbox.moe/7jpbez.png" class="h-16 w-16 rounded" alt="Paranoia API"/>
+                        <div class="flex flex-col">
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-medium text-white xl:text-lg">homicide.lol</h3>
+                                <div class="h-2 w-2 rounded-full bg-red-600"></div>
+                            </div>
+                            <p class="text-xs font-light text-white text-opacity-80 xl:text-sm">bio link.</p>
+                        </div>
+                    </div>
+                    <div class="flex w-full items-center gap-2 px-4 pb-4 mt-2">
+                        <div style="border-color:gray;filter:contrast(0.3)" class="flex items-center gap-2 whitespace-nowrap rounded bg-white bg-opacity-10 px-3 py-1">
+                            <div class="h-1.5 w-1.5 rounded-full" style="background-color:rgb(0, 155, 28)"></div>
+                            <p class="text-xs font-light text-white xl:text-sm">150+ Users</p>
+                        </div>
+                        <div style="border-color:yellow;filter:contrast(0.3)" class="flex items-center gap-2 whitespace-nowrap rounded bg-white bg-opacity-10 px-3 py-1">
+                            <div class="h-1.5 w-1.5 rounded-full" style="background-color:yellow"></div>
+                            <p class="text-xs font-light text-white xl:text-sm">PHP</p>
+                        </div>
+                        <div style="border-color:blue;filter:contrast(0.3)" class="flex items-center gap-2 whitespace-nowrap rounded bg-white bg-opacity-10 px-3 py-1">
+                            <div class="h-1.5 w-1.5 rounded-full" style="background-color:blue"></div>
+                            <p class="text-xs font-light text-white xl:text-sm">Bio Page</p>
+                        </div>
+                     </div>
                 </div>
             </div>
         </div>
@@ -38,16 +89,16 @@
         <div class="testimonials my-4">
             <h2 class="text-2xl font-bold">Friends</h2>
             <div class="testimonial-card flex border border-gray-600 p-4 rounded-lg shadow-md mt-4">
-                <img src="https://cdn.discordapp.com/avatars/1311827324848574542/cf9a43fff214fb146a988595393328c2.webp?size=1024&format=webp&width=640&height=640" alt="User  Profile" class="profile-pic w-12 h-12 rounded-full mr-4">
+                <img src="https://files.catbox.moe/td94tc.webp" alt="User  Profile" class="profile-pic w-12 h-12 rounded-full mr-4">
                 <div class="testimonial-content flex-1">
                     <span class="author text-lg font-semibold">Stxxz</span>
                     <p class="text-gray-400">"Real Nigga."</p>
                 </div>
             </div>
             <div class="testimonial-card flex border border-gray-600 p-4 rounded-lg shadow-md mt-4">
-                <img src="https://cdn.discordapp.com/avatars/1319325788545355919/76a91198cd869f1b55866fb14bb8a10e.webp?size=1024&format=webp&width=640&height=640" alt="User  Profile" class="profile-pic w-12 h-12 rounded-full mr-4">
+                <img src="https://files.catbox.moe/the4nv.webp" alt="User  Profile" class="profile-pic w-12 h-12 rounded-full mr-4">
                 <div class="testimonial-content flex-1">
-                    <span class="author text-lg font-semibold">Enact</span>
+                    <span class="author text-lg font-semibold">Qvx</span>
                     <p class="text-gray-400">"Real Nigga V2."</p>
                 </div>
             </div>
