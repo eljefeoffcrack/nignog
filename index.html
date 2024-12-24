@@ -8,6 +8,7 @@
     <meta property="og:title" content="eljefe">
     <meta property="og:image" content="https://files.catbox.moe/trhi7b.png">
     <meta property="og:site_name" content="eljefe.lol">
+    <meta property="og:description" content="Telegram:@convict">
     <title>eljefe</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -22,7 +23,7 @@
             <p id="subtext" class="text-gray-400 italic mt-1">esex...</p>
         </div>
         <div class="content my-4 text-gray-300">
-            <p class="text-lg font-normal">Hello, I'm Eljefe, a Social Engineer, Security Researcher, and Developer passionate about exploring the intersection of technology and cybersecurity. I’m always expanding my knowledge and skills.</p>
+            <p class="text-lg font-normal">self taught developer..</p>
             <p class="text-gray-500">The time in Europe is <span id="germany-time" class="font-semibold">--:--</span>.</p>
         </div>
         <div class="icons my-4">
@@ -34,6 +35,26 @@
             <a href="https://eljefe.lol" class="text-white text-lg mx-2 hover:underline transition-colors duration-300">home</a>
             <a href="https://eljefe.lol/other" class="text-white text-lg mx-2 hover:underline transition-colors duration-300" hx-get="other.html" hx-target="#dynamic-content" hx-swap="innerHTML">other</a>
         </nav>
+        <div id="api-message" class="text-gray-400 italic mt-1"></div>
+        <div class="announcement my-4 p-4 border border-gray-600 rounded">
+            <h2 class="text-2xl font-bold mb-2">Announcement</h2>
+            <p class="text-gray-300">discord.gg/typed for good mm services</p>
+            
+            <div class="community-info flex items-center justify-between p-3 rounded mt-2">
+                <div class="flex items-center">
+                    <img src="gg.webp" alt="typed icon" class="w-10 h-10 mr-2"> 
+                    <div>
+                        <p class="text-white font-semibold">/typed</p>
+                        <p id="member-count"></p>
+                    </div>
+                </div>
+                <a href="https://discord.gg/typed" target="_blank">
+                    <button class="text-white bg-green-500 hover:bg-green-600 transition duration-300 rounded px-3 py-1">
+                        Join
+                    </button>
+                </a>
+            </div>
+        </div>
         <div class="spotify-status flex items-center border border-gray-600 p-2 rounded mt-4 transition duration-300 hover:bg-gray-800" id="spotify-status">
             <i class="fab fa-spotify text-green-500 text-2xl mr-2"></i>
             <p class="text-gray-400">currently not listening...</p>
@@ -193,8 +214,8 @@
                                     <div class="flex items-center p-2">
                                         ${fileIcon}
                                         <div>
-                                            <p class="text-white">Editing <strong>${fileName}</strong></p>
-                                            <p class="text-gray-400">Workspace: <em>${activity.party?.id || "No workspace"}</em></p>
+                                            <p class="text-white"><strong>${fileName}</strong></p>
+                                            <p class="text-gray-400">Workspace: <em>${activity.activities && activity.activities.length > 0 ? activity.activities[0].state : "No workspace"}</em></p>
                                         </div>
                                     </div>
                                 `;
@@ -236,9 +257,13 @@
         setInterval(fetchPresence, 1000);
         updateGermanyTime();
         setInterval(updateGermanyTime, 1000);
+        fetchMemberCount();
+        setInterval(fetchMemberCount, 10000); // Update every 10 seconds
     </script>
 
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+
+<script src="Spotify.js"></script>
 
 </body>
 </html>
